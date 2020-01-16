@@ -9,8 +9,9 @@
 <title>Registration</title>
 </head>
 <body>
-	<header>Registration</header>
+	
 	<div align="center">
+		<header>Registration</header>
 		<form:form action="saveUser" method="post" modelAttribute="user">
 			<table>
 				<tr>
