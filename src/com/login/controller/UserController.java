@@ -31,15 +31,11 @@ public class UserController {
 	public String tryLoginUser(@ModelAttribute("user") User user) {
 		
 		List<User> validUsers = userService.getUsers();
-		String returnString = new String();
+		String returnString = "redirect:/users/registerUser";
+		
 		for (User u : validUsers) {
-			String dbUserEmail = u.getEmail();
-			String dbUserPassword = u.getPassword();
-			if (user.getEmail() == dbUserEmail && user.getPassword() == dbUserPassword) {
+			if (u.getEmail().equals(user.getEmail()) && u.getPassword().equals(user.getPassword())) {
 				returnString = "redirect:/users/userHome";
-			}
-			else {
-			returnString = "redirect:/users/registerUser";
 			}
 		}
 		return returnString;
@@ -49,6 +45,18 @@ public class UserController {
 	public ModelAndView registerUser() {
 		ModelAndView mv = new ModelAndView("Register");
 		mv.addObject("user", new User());
+		return mv;
+	}
+	
+	@RequestMapping(value = "/saveUser")
+	public String saveUser(@ModelAttribute("user") User user) {
+		userService.addUser(user);
+		return "redirect:/users/userHome";
+	}
+	
+	@RequestMapping(value = "/userHome")
+	public ModelAndView userHome() {
+		ModelAndView mv = new ModelAndView("Home");
 		return mv;
 	}
 }

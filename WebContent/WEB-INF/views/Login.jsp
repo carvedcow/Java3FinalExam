@@ -19,12 +19,12 @@
 			<table>
 				<tr>
 					<td>Email: </td>
-					<td><form:input path="email" /></td>
+					<td><form:input path="Email" /></td>
 				</tr>
 
 				<tr>
 					<td>Password: </td>
-					<td><form:password path="password" /></td>
+					<td><form:password path="Password" /></td>
 				</tr>
 				<tr>
 					<td colspan="2"><input type="submit" value="Submit"></td>
