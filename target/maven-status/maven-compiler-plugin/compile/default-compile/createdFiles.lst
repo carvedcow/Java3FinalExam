@@ -1,0 +1,9 @@
+com\login\dao\UserDao.class
+com\login\model\User.class
+com\login\dao\UserDaoHibernateImp.class
+com\login\service\UserServiceImp.class
+com\login\configuration\DatabaseConfiguration.class
+com\login\configuration\WebAppInitializer.class
+com\login\service\UserService.class
+com\login\configuration\WebMvcConfiguration.class
+com\login\controller\UserController.class
